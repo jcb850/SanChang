@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css"/>
+		<style type="text/css">
+			/*div{
+				color: #EC971F;
+			}*/
+			.messageitems{
+				width: 100%;
+				height: 72px;
+				/*border: 1px solid #CCCCCC;*/
+				margin-top: 7px;
+				margin-bottom: 7px;
+			}
+			.m-item{
+				width: 96%;
+				height: 100%;
+				margin-left: 2%;
+				border-radius:3px ;
+				background-color: #FFFFFF;
+				/*border: 1px solid #CCCCCC;*/
+				box-shadow: 1px 1px 3px #CCCCCC;
+				
+			}
+			.mi-dot{
+				float: left;
+				margin-top: 10px;
+				margin-left: 15px;
+				width: 12px;
+				height: 12px;
+				/*border: 1px solid orangered;*/
+				box-shadow: 1px 1px 3px #CCCCCC;
+				border-radius:50px ;
+				background-color:orange ;
+			}
+			.mi-title{
+				color: #000000;
+				margin-left: 10px;
+				font-family: "黑体";
+				font-size: 15px;
+				float: left;
+				line-height: 31px;
+			}
+			.mi-con{
+				width: 100%;
+				float: left;
+			}
+			.mi-con p{
+				float: left;
+				margin-left: 8px;
+				font-size: 13px;
+			}
+			.mi-con img{
+				float: left;
+				width: 20px;
+				margin-left: 11px;
+			}
+			.m-info{
+				float: right;
+				margin-top: -47px;
+				margin-right: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">预警信息管理</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="messageitems">
+		    	<div class="m-item">
+		    		<div class="mi-dot"></div>
+		    		<p class="mi-title"><b>生产运行部</b></p>
+		    		<div class="mi-con">
+		    			<img src="pic/warning.png"/>
+		    			<p>即将过期</p>
+		    		</div>
+		    		<p class="m-info">详情></p>
+		    	</div>
+		    </div>
+		    <div class="messageitems">
+		    	<div class="m-item">
+		    		<div class="mi-dot"></div>
+		    		<p class="mi-title"><b>计划规划部</b></p>
+		    		<div class="mi-con">
+		    			<img src="pic/outline.png"/>
+		    			<p>已过期5天</p>
+		    		</div>
+		    		<p class="m-info">详情></p>
+		    	</div>
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui('body').on('tap','.messageitems',function(){
+			  location.href="messagemange.html"
+			}) 
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/items.css" />
+		<style type="text/css">
+			#addcon {
+				width: 25px;
+				float: right;
+				margin-top: 7px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">节点建设存在问题</h1>
+			<img onclick="location.href='add-question.html'" id="addcon" src="pic/add.png" />
+		</header>
+
+		<div class="mui-content">
+			<select style="margin: 0;" id="s-select">
+				<option>2018</option>
+			</select>
+			
+			<div class="items">
+				<div class="i-title">
+					<p class="it-date">2018-12-07</p>
+					<span class="more mui-icon mui-icon-arrowdown"></span>
+					<p class="it-no">NO.1</p>
+				</div>
+				<div class="i-list">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<p class="il-key">序号:</p>
+							<p class="il-value">1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">提出问题:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">投产区块:</p>
+							<p class="il-value">区块1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">工作进展情况:</p>
+							<p class="il-value">已完成</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">预计完成时间:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">节点:</p>
+							<p class="il-value">工钱工程图</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">问题描述:</p>
+							<p class="il-value">测试</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">解决措施:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">问题处理时间:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">解决部门及负责人:</p>
+							<p class="il-value">测试</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">操作:</p>
+							<!--<p class="il-value">15</p>-->
+							<button type="button" class="mui-btn mui-btn-blue">处理</button>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="items">
+				<div class="i-title">
+					<p class="it-date">2018-12-07</p>
+					<span class="more mui-icon mui-icon-arrowdown"></span>
+					<p class="it-no">NO.2</p>
+				</div>
+				<div class="i-list">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<p class="il-key">序号:</p>
+							<p class="il-value">2</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">提出问题:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">投产区块:</p>
+							<p class="il-value">区块1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">工作进展情况:</p>
+							<p class="il-value">已完成</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">预计完成时间:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">节点:</p>
+							<p class="il-value">工钱工程图</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">问题描述:</p>
+							<p class="il-value">测试</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">解决措施:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">问题处理时间:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">解决部门及负责人:</p>
+							<p class="il-value">测试</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">操作:</p>
+							<!--<p class="il-value">15</p>-->
+							<button type="button" class="mui-btn mui-btn-blue">处理</button>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			
+			<div style="width: 100%; height: 50px;float: left;" id=""></div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui('body').on('tap', '.more', function() {
+				var index = this.parentElement.nextElementSibling
+				console.log(index)
+				index.style.transition = "0.3s"
+				if(index.style.height != "auto") {
+					index.style.height = "auto"
+				} else {
+					index.style.height = "0px"
+				}
+			})
+		</script>
+	</body>
+
+</html>

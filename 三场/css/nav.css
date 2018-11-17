@@ -1,0 +1,8 @@
+header{
+	background: #509bff !important;
+	z-index: 99 !important;
+	
+}
+header h1,header a{
+	color: #FFFFFF !important;
+}

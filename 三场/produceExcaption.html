@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<style type="text/css">
+			.items {
+				width: 96%;
+				margin-left: 2%;
+				margin-top: 0px;
+			}
+			
+			.i-title {
+				background-color: royalblue;
+				width: 100%;
+				height: 40px;
+				border-radius: 5px;
+				float: left;
+				box-shadow: 0px 0px 5px royalblue;
+				margin-top: 12px;
+			}
+			
+			.mui-icon-arrowdown {
+				color: #FFFFFF;
+				float: right;
+				margin-top: 7px;
+				margin-right: 7px;
+			}
+			
+			.it-date,
+			.it-no {
+				color: #FFFFFF;
+				line-height: 40px;
+			}
+			
+			.it-date {
+				float: left;
+				margin-left: 12px;
+			}
+			
+			.it-no {
+				float: right;
+				margin-right: 10px;
+			}
+			
+			.i-list {
+				float: left;
+				width: calc(100% - 6px);
+				margin-left: 3px;
+				height: 0px;
+				/*margin-top: -10px !important;*/
+				overflow: hidden;
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+				background-color: #555555;
+				transition: 0.3s;
+			}
+			
+			.il-key {
+				width: 40%;
+				color: #000000;
+				float: left;
+				font-size: 13px;
+			}
+			
+			.il-value {
+				width: 60%;
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">产能建设基本概况</h1>
+		</header>
+		<div class="mui-content">
+			<div class="items">
+				<div class="i-title">
+					<p class="it-date">区块A</p>
+					<span class="more mui-icon mui-icon-arrowdown"></span>
+					<p class="it-no"></p>
+				</div>
+				<div class="i-list">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<p class="il-key">序号:</p>
+							<p class="il-value">1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">区块:</p>
+							<p class="il-value">区块1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">油井:</p>
+							<p class="il-value">100</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">水井:</p>
+							<p class="il-value">100</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">合计:</p>
+							<p class="il-value">200</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">建造能力（万吨）:</p>
+							<p class="il-value">156</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">新井配产（万吨）:</p>
+							<p class="il-value">178</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">记产开始时间:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">记产天数:</p>
+							<p class="il-value">15</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="items">
+				<div class="i-title">
+					<p class="it-date">区块B</p>
+					<span class="more mui-icon mui-icon-arrowdown"></span>
+					<p class="it-no"></p>
+				</div>
+				<div class="i-list">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<p class="il-key">序号:</p>
+							<p class="il-value">1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">区块:</p>
+							<p class="il-value">区块1</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">油井:</p>
+							<p class="il-value">100</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">水井:</p>
+							<p class="il-value">100</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">合计:</p>
+							<p class="il-value">200</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">建造能力（万吨）:</p>
+							<p class="il-value">156</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">新井配产（万吨）:</p>
+							<p class="il-value">178</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">记产开始时间:</p>
+							<p class="il-value">2018-12-07</p>
+						</li>
+						<li class="mui-table-view-cell">
+							<p class="il-key">记产天数:</p>
+							<p class="il-value">15</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div style="width: 100%; height: 50px;float: left;" id=""></div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//样式js
+			mui.init()
+			var mark = false
+			mui('body').on('tap', '.more', function() {
+				var index = this.parentElement.nextElementSibling
+				console.log(index)
+				index.style.transition = "0.3s"
+				if(index.style.height != "auto") {
+					index.style.height = "auto"
+				} else {
+					index.style.height = "0px"
+				}
+				mark = !mark
+			})
+		</script>
+	</body>
+
+</html>

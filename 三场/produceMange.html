@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/items.css" />
+		<style type="text/css">
+			#mnue {
+				width: 80%;
+				position: fixed;
+				top: 0;
+				left: -80%;
+				bottom: 0;
+				background: #FFFFFF;
+				z-index: 100;
+				transition: 0.3s;
+				/*display: none;*/
+			}
+			
+			#title {
+				width: 100%;
+				height: 44px;
+				text-align: center;
+				color: #000000;
+				line-height: 44px;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				/*box-shadow: 0px 0px 3px #CCCCCC;*/
+				margin-bottom: 0;
+				/*z-index: 9999;*/
+			}
+			
+			#mnueicon {
+				width: 30px;
+				float: right;
+				margin-top: 7px;
+			}
+			
+			#shadow {
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 0.2;
+				z-index: 100;
+				display: none;
+				position: fixed;
+				background-color: #000000;
+			}
+			
+			#con {
+				width: 100%;
+			}
+			
+			.selctbox {
+				float: left;
+				width: 50%;
+			}
+			
+			.selctbox label {
+				float: left;
+				width: 20%;
+				line-height: 49px;
+				margin-left: 5px;
+			}
+			
+			.selctbox select {
+				float: left;
+				width: 64%;
+				margin-left: 10%;
+				margin-top: 5px;
+				height: 40px;
+			}
+			
+			#from {
+				margin-top: 60px;
+			}
+			
+			#sbitem {
+				position: fixed;
+				top: 44px;
+				left: 0;
+				right: 0;
+				background-color: #EFEFF4;
+				box-shadow: 0px 0px 3px #EFEFF4;
+				height: 50px;
+			}
+			
+			.f-con {
+				width: 200%;
+			}
+			
+			.f-title div {
+				background-color: #509BFF !important;
+				color: #FFFFFF !important;
+				border-left: 1px solid #FFFFFF !important;
+				line-height: 60px !important;
+				font-size: 14px !important;
+				padding-top: 0 !important;
+			}
+			
+			.f-con div {
+				border-bottom: 1px solid #CCCCCC;
+				height: 60px;
+				background-color: #FFFFFF;
+				float: left;
+				border-left: 1px solid #CCCCCC;
+				color: #333333;
+				font-size: 12px;
+				padding-top: 10px;
+				/*line-height: 10px;*/
+				text-align: center;
+			}
+			
+			.ot div {
+				background-color: #F2F2F2 !important;
+			}
+			
+			.fi-title {
+				width: 200%;
+				background-color: #FFFFFF;
+				color: #999999;
+				border-top: 1px solid #CCCCCC;
+				line-height: 30px;
+				height: 30px;
+				padding-left: 10px;
+				margin-bottom: 0;
+			}
+			
+			#realtime {
+				/*background-color: #FFFFFF;*/
+			}
+			
+			#rt-con {
+				width: 200%;
+				height: 50px;
+				background-color: #FFFFFF;
+				float: left;
+			}
+			
+			#lookwin,
+			#popover {
+				position: fixed;
+				width: 100%;
+				top: 150px;
+				background-color: initial;
+				bottom: 0px;
+			}
+			
+			#lookwin {
+				top: 110px;
+				bottom: auto;
+			}
+			
+			#small-l,
+			#small-p {
+				width: 100%;
+				height: 200px;
+				background-color: #FFFFFF;
+			}
+			
+			#small-l {
+				height: 260px;
+			}
+			
+			#sp-head {
+				width: 100%;
+				height: 30px;
+				border-bottom: 1px solid #CCCCCC;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			#btns {
+				width: 100%;
+			}
+			
+			#btns button {
+				width: 44%;
+				margin-left: 4%;
+			}
+			
+			#sp-input label {
+				font-size: 13px;
+			}
+			
+			#sp-input input {
+				width: 60%;
+				font-size: 15px;
+			}
+			
+			.key {
+				width: 30%;
+				float: left;
+				color: #000000;
+			}
+			
+			.value {
+				width: 70%;
+				float: left;
+			}
+			
+			.upquestion {
+				width: 100%;
+				height: auto;
+				float: left;
+				margin-top: 50px;
+				padding-bottom: 20px;
+				background-color: #FFFFFF;
+			}
+			
+			.u-title {
+				color: #000000;
+				line-height: 30px;
+				font-size: 15px;
+				font-family: "微软雅黑";
+				width: 100%;
+				padding-left: 5px;
+				height: 30px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			
+			.mui-table-view-cell {
+				border-left: 1px solid #CCCCCC;
+				border-right: 1px solid #CCCCCC;
+			}
+			.btn{
+				margin-top: 10px;
+				width: 46%;
+				margin-left: 2%;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">产能运行节点管理</h1>
+			<!--<img id="mnueicon" src="pic/mnue.png" />-->
+		</header>
+		<div id="lookwin" class="mui-popover">
+			<div id="small-l">
+				<div id="sp-head">
+					详情
+				</div>
+				<ul style="border-radius:0 ; border-bottom: 1px solid #CCCCCC;" class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<p class="key">序号</p>
+						<p class="value">1</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<p class="key">任务列表</p>
+						<p class="value">可以投产新井</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<p class="key">进度</p>
+						<p class="value">50%</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<p class="key">状态</p>
+						<p class="value">保存</p>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<p class="key">序号</p>
+						<p class="value">暂无</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<p class="key">交付文件列表</p>
+						<p class="value">暂无</p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div id="popover" class="mui-popover">
+			<div id="small-p">
+				<div id="sp-head">
+					编辑
+				</div>
+				<div id="sp-input">
+					<div class="mui-input-row">
+						<label>实际开始时间</label>
+						<input class="sp-input sp-time" readonly="readonly" type="text" placeholder="请选择时间">
+					</div>
+					<div class="mui-input-row">
+						<label>提交时间</label>
+						<input class="sp-input sp-time" type="text" readonly="readonly" placeholder="请选择时间">
+					</div>
+					<div class="mui-input-row">
+						<label>进度</label>
+						<input class="sp-input" type="number" placeholder="单位（百分比）">
+
+					</div>
+
+				</div>
+				<div id="btns">
+					<button type="button" class="mui-btn mui-btn-yellow">仅保存</button>
+					<button type="button" class="mui-btn mui-btn-blue">保存并提交</button>
+				</div>
+			</div>
+		</div>
+		<div id="shadow">
+
+		</div>
+		<div class="mui-content">
+
+			<div id="con">
+				<div id="sbitem">
+					<div class="selctbox">
+						<label>年度</label>
+						<select name="">
+							<option value="">2018</option>
+						</select>
+					</div>
+					<div class="selctbox">
+						<label>区块</label>
+						<select name="">
+							<option value="">区块1</option>
+							<option value="">区块2</option>
+							<option value="">区块3</option>
+							<option value="">区块4</option>
+							<option value="">区块5</option>
+							<option value="">区块6</option>
+							<option value="">区块7</option>
+						</select>
+					</div>
+				</div>
+				<div class="upquestion">
+					<p class="u-title">上游流转</p>
+					<div class="items">
+						<div class="i-title">
+							<p class="it-date">计划规划研究所</p>
+							<span class="more mui-icon mui-icon-arrowdown"></span>
+							<p class="it-no"></p>
+						</div>
+						<div class="i-list">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p class="il-key">序号:</p>
+									<p class="il-value">1</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">部门:</p>
+									<p class="il-value">计划规划研究所</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">节点:</p>
+									<p class="il-value">初涉完成</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">提交时间:</p>
+									<p class="il-value">2018-12-07</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">说明:</p>
+									<p class="il-value">无</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">明细:</p>
+									<!--<p class="il-value">156</p>-->
+									<button type="button" class="mui-btn mui-btn-blue">查看</button>
+								</li>
+
+							</ul>
+						</div>
+						<div id="submitbtn">
+							<button style=" position: fixed; bottom: 20px; width: 96%;margin-left: 2%;" type="button" class="mui-btn mui-btn-blue">提交</button>
+						</div>
+					</div>
+				</div>
+				<div class="upquestion">
+					<p class="u-title">任务提交</p>
+					<div class="items">
+						<div class="i-title">
+							<p class="it-date">地面建设正式计划</p>
+							<span class="more mui-icon mui-icon-arrowdown"></span>
+							<p class="it-no"></p>
+						</div>
+						<div class="i-list">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p class="il-key">序号:</p>
+									<p class="il-value">1</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">任务列表:</p>
+									<p class="il-value">计划规划研究所</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">计划开始时间:</p>
+									<p class="il-value">2018-12-07</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">计划结束时间:</p>
+									<p class="il-value">2018-12-07</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">实际开始时间:</p>
+									<p class="il-value">2018-12-07</p>
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">提交时间:</p>
+									<p class="il-value">2018-12-07</p>
+									<!--<button type="button" class="mui-btn mui-btn-blue">查看</button>-->
+								</li>
+								<li class="mui-table-view-cell">
+									<p class="il-key">进度:</p>
+									<p class="il-value">50%</p>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<p class="il-key">操作:</p>
+									<button type="button" class="mui-btn mui-btn-blue">编辑</button>
+								</li>
+
+							</ul>
+						</div>
+						<div id="submitbtn">
+							<button style=" position: fixed; bottom: 20px; width: 96%;margin-left: 2%;" type="button" class="mui-btn mui-btn-blue">提交</button>
+						</div>
+					</div>
+				</div>
+				<div style=" margin-top:20px;padding-bottom: 0 !important;" class="upquestion">
+					<p class="u-title">任务提交</p>
+					<textarea style="width: 96%; margin-left: 2%;" name="" rows="" cols=""></textarea>
+				</div>
+				<button  type="button" class="mui-btn mui-btn-green btn">保存</button>
+				<button type="button" class="mui-btn mui-btn-blue btn">提交</button>
+			<div style="width: 100%; height: 50px;float: left;" id=""></div>
+				
+			</div>
+
+			<script src="js/mui.min.js"></script>
+			<script src="" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				mui.init({})
+				mui('body').on('tap', '.more', function() {
+					var index = this.parentElement.nextElementSibling
+					console.log(index)
+//					index.style.transition = "0.3s"
+					if(index.style.height != "auto") {
+						index.style.height = "auto"
+					} else {
+						index.style.height = "0px"
+					}
+				})
+			</script>
+	</body>
+
+</html>

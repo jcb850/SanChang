@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<style type="text/css">
+			label {
+				font-size: 14px;
+			}
+			
+			.mui-table-view {
+				margin-top: 0 !important;
+			}
+			
+			.mui-input-row {
+				height: 30px;
+			}
+			
+			.mui-table-view-cell {
+				padding: 5px !important;
+				padding-bottom: 9px !important;
+			}
+			
+			#btn {
+				width: 96%;
+				margin-left: 2%;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">提交问题</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>投产区块</label>
+						<!--<input type="text" class="mui-input-clear" placeholder="请输入内容">-->
+						<select name="">
+							<option value="">区块A</option>
+							<option value="">区块B</option>
+							<option value="">区块C</option>
+							<option value="">区块D</option>
+						</select>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>提出时间</label>
+						<input readonly="readonly" id="outtime" type="text" class="mui-input-clear" placeholder="请选择时间">
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>节点</label>
+						<!--<input type="text" class="mui-input-clear" placeholder="请输入内容">-->
+						<select name="">
+							<option value="">区块A</option>
+							<option value="">区块B</option>
+							<option value="">区块C</option>
+							<option value="">区块D</option>
+						</select>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>问题描述</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入内容">
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>解决措施</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入内容">
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>问题处理时间</label>
+						<input readonly="readonly" id="intime" type="text" class="mui-input-clear" placeholder="请选择时间">
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>问题解决部门</label>
+						<!--<input type="text" class="mui-input-clear" placeholder="请输入内容">-->
+						<select name="">
+							<option value="">区块A</option>
+							<option value="">区块B</option>
+							<option value="">区块C</option>
+							<option value="">区块D</option>
+						</select>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>负责人</label>
+						<!--<input type="text" class="mui-input-clear" placeholder="请输入内容">-->
+						<select name="">
+							<option value="">区块A</option>
+							<option value="">区块B</option>
+							<option value="">区块C</option>
+							<option value="">区块D</option>
+						</select>
+					</div>
+				</li>
+
+			</ul>
+			<button id="btn" type="button" class="mui-btn mui-btn-blue">提交</button>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+				(function($) {
+					$.init();
+					var result = $('#outtime')[0];
+					var btns = $('#outtime');
+					btns.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function(rs) {
+									result.value = rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									result.value = rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+
+						}, false);
+					});
+				})(mui);
+			(function($) {
+				$.init();
+				var result = $('#intime')[0];
+				var btns = $('#intime');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var _self = this;
+						if(_self.picker) {
+							_self.picker.show(function(rs) {
+								result.value = rs.text;
+								_self.picker.dispose();
+								_self.picker = null;
+							});
+						} else {
+							var optionsJson = this.getAttribute('data-options') || '{}';
+							var options = JSON.parse(optionsJson);
+							var id = this.getAttribute('id');
+							_self.picker = new $.DtPicker(options);
+							_self.picker.show(function(rs) {
+								result.value = rs.text;
+								_self.picker.dispose();
+								_self.picker = null;
+							});
+						}
+
+					}, false);
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>
